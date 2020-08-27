@@ -43,6 +43,8 @@ To test linting run below command
 
 Around 14 test cases added.
 
+Ngx-logger has been added to log console for errors
+
 
 Further notes
 1. Timeout of 15 seconds is set at environment.ts file for the API call so if no response is there in 15 seconds it will console.log timeout. So rxjs timeout added. 
