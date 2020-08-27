@@ -3,6 +3,7 @@ import { CatApiService } from '../../services/cat-api.service';
 import forEach from 'lodash/forEach';
 import * as stubObj from '../cat-listing/stub-data.json';
 import { orderList } from './../../shared/common-functions';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-cat-listing',
@@ -21,7 +22,7 @@ export class CatListingComponent implements OnInit {
   title = 'Listing of Cats';
 
   jsonDataStub: any = (stubObj as any).default; // this is for test
-  constructor(private catServie: CatApiService) {}
+  constructor(private catServie: CatApiService, private logger: NGXLogger) {}
 
   ngOnInit(): void {
     this.catLoading = './../../../assets/images/busy-spinner.gif';
@@ -41,7 +42,7 @@ export class CatListingComponent implements OnInit {
         this.errorStatus = true;
         this.errorMessage = error.statusText;
         if (error === 'Timeout Exception') {
-          console.log('Timed out');
+          this.logger.log('Timed out');
         }
       }
     );

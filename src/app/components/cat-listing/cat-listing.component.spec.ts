@@ -12,6 +12,7 @@ import { componentFactoryName } from '@angular/compiler';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpTestingController } from '@angular/common/http/testing';
+import { LoggerTestingModule } from 'ngx-logger/testing';
 
 let catService: CatApiService;
 
@@ -22,7 +23,7 @@ describe('CatListingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, HttpClientModule],
+      imports: [RouterTestingModule, HttpClientModule, LoggerTestingModule],
       declarations: [CatListingComponent],
       providers: [CatApiService, HttpClientTestingModule],
     }).compileComponents();

@@ -7,6 +7,8 @@ import { CatListingComponent } from './components/cat-listing/cat-listing.compon
 import { HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+import { environment } from './../environments/environment';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,13 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    LoggerModule.forRoot({
+      serverLoggingUrl: '/api/logs',
+      level: environment.LOGGER_LEVEL ? NgxLoggerLevel.LOG : NgxLoggerLevel.OFF,
+      serverLogLevel: environment.SERVER_LOG_LEVEL ? NgxLoggerLevel.LOG : NgxLoggerLevel.OFF,
+      disableConsoleLogging: environment.CONSOLE_LOG
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,7 +6,10 @@ export const environment = {
   production: false,
   CAT_URL: 'http://agl-developer-test.azurewebsites.net',
   CAT_ENDPOINT: '/people.json',
-  RESPONSE_TIMEOUT_API: '15000'
+  RESPONSE_TIMEOUT_API: '15000',
+  LOGGER_LEVEL: true,
+  SERVER_LOG_LEVEL: false,
+  CONSOLE_LOG: false,
 };
 
 /*

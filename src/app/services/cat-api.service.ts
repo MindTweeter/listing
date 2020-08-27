@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { OwnerPet } from '../model/owner.pet';
 import { timeout, catchError } from 'rxjs/operators';
 import { throwError, TimeoutError } from 'rxjs';
+import { NGXLogger } from 'ngx-logger';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +28,7 @@ export class CatApiService {
       timeout(parseInt(`${environment.RESPONSE_TIMEOUT_API}`, 10)),
       catchError((error) => {
         if (error instanceof TimeoutError) {
-          console.log('timeout service. ');
+          this.logger.log('timeout service.');
           return throwError('Timeout Exception');
         }
 
@@ -36,5 +37,5 @@ export class CatApiService {
     );
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private logger: NGXLogger) {}
 }

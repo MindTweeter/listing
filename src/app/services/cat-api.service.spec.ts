@@ -7,19 +7,22 @@ import { HttpTestingController } from '@angular/common/http/testing';
 import * as stubObj from '../components/cat-listing/stub-data.json';
 import { environment } from '../../environments/environment';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+// import { NGXLogger } from 'ngx-logger';
+import { LoggerTestingModule } from 'ngx-logger/testing';
 
 describe('CatApiService', () => {
   let service: CatApiService;
   let httpMock: HttpTestingController;
+  // let logger: NGXLogger;
   const jsonDataStub: any = (stubObj as any).default; // this is for test
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule, LoggerTestingModule ],
       providers: [
         CatApiService,
         HttpClientTestingModule,
-        HttpTestingController,
+        HttpTestingController
       ],
     });
     service = TestBed.inject(CatApiService);
