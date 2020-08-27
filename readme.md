@@ -41,12 +41,14 @@ The project has all liniting issues fixed. formatter used (visual code extension
 To test linting run below command
 # ng lint
 
+Around 14 test cases added.
+
 
 Further notes
-1. The API has been found to be in-consistent at times going to timeout. So rxjs timeout added. In case test cases failed, re-run to load button for the API
-2. loading icon added to show till api data is available
-
-3. for any issue contact syed wakil at syedawakil@gmail.com or syedwakil1@gmail.com
+1. Timeout of 15 seconds is set at environment.ts file for the API call so if no response is there in 15 seconds it will console.log timeout. So rxjs timeout added. 
+2. In case test cases failed, re-run to load button for the API
+3. loading icon added to show till api data is available
+4. for any issue contact syed wakil at syedawakil@gmail.com or syedwakil1@gmail.com
 
 Feedback will be appreciated
 
