@@ -25,7 +25,7 @@ In case you already have a running application at localhost:4200 use the below c
 
 i.e
 
-# ng serve  --port 4200
+# ng serve  --port 4250
 
 
 Test cases have been included
