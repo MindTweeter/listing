@@ -1,2 +1,2 @@
-Initial commit to git
+Initial commit to git.
 
