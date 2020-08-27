@@ -15,8 +15,10 @@ If you have a different version of node, use nvm to install the right version of
 What you need to do to run this application
 
 1. clone/download the project
+2. In the cloned/ downloaded folder => cd listing
 2. npm install
 3. ng build
+
 
 To run the application 
 # ng serve
