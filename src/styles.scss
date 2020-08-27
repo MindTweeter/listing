@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "MontserratRegular";
+   // src: url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
+    src: url("assets/fonts/Montserrat-Regular.ttf"),
+      url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "MontserratBold";
+    src: url("assets/fonts/Montserrat-Bold.ttf"),
+      url("assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  }
+
+  body {
+    // background: $bodyBg;
+    // color: $textColor;
+     font-family: MontserratRegular, Arial, sans-serif;
+     /*	border-radius: 5px;
+       border-top-left-radius: 0.5rem;*/
+   }

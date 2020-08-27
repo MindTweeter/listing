@@ -1,0 +1,50 @@
+<div class="container pt-2">
+    <h3>{{title}}</h3>
+    <p>The list below is based on Listing of cats in alphabetical order based on Male/Female  using api service  </p>
+   
+    
+    
+    <button (click)="RefreshData()" class="btn btn-success">Load</button>
+    <hr>
+</div>
+<div class="container warning-container" *ngIf="errorStatus">
+    <h1>Message Cart</h1>
+    <span>{{errorMessage}}</span><br>
+    <span>Please cllick on load button after sometime..</span><br>
+
+    <hr>
+</div>
+<div class="container scroll-outer" *ngIf="!errorStatus">
+    The original Json API Object from Cloud:
+    <div class="scroll-inner">
+        <div *ngIf="isLoading"> 
+            <img src="{{catLoading}}" class="cat-load" /> <span>loading api ....</span>
+        </div>
+        <pre>{{originalList|json}}</pre>
+    </div>
+
+</div>
+<div class="dv-pad">
+    &nbsp;
+</div>
+<div class="container scroll-outer" *ngIf="!errorStatus">
+    The output in alphabetical order: 
+    <div class="scroll-inner shade">
+        <div *ngIf="isNormalisedLoading"> 
+            <img src="{{catLoading}}" class="cat-load" /> <span>normalising the json ....</span>
+        </div>
+        <ul>
+            <li *ngFor="let recordType of sortedList">
+                <span class='rec-type'>{{ recordType.Type }} </span>
+                <ul>
+                    <li *ngFor="let record of recordType.List ">
+
+                        {{record.name}} 
+
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</div>

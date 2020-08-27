@@ -25,7 +25,7 @@ In case you already have a running application at localhost:4200 use the below c
 
 i.e
 
-# ng serve  --port 4300
+# ng serve  --port 4200
 
 
 Test cases have been included
@@ -41,13 +41,12 @@ To test linting run below command
 
 
 Further notes
-1. The API has been found to be in-consistent at times going to timeout. So rxjs timeout added. In case test cases failed, re-run to load the API
+1. The API has been found to be in-consistent at times going to timeout. So rxjs timeout added. In case test cases failed, re-run to load button for the API
 2. loading icon added to show till api data is available
 
 3. for any issue contact syed wakil at syedawakil@gmail.com or syedwakil1@gmail.com
 
 Feedback will be appreciated
 
-Currently stackblitz is in-compatible with Angular 9 so sink with stackblitz will not work
 
 Just clone and work with the application. routing concept enabled
